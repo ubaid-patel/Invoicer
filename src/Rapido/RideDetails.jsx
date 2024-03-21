@@ -50,6 +50,7 @@ function SaveData(event) {
       rider: riders[getRandomNumber(0, riders.length - 1)],
       vehicleNumber: "KA" +getRandomNumber(10,40)+getRandomAlphabets() + getRandomNumber(1000, 9999),
       bookingFee: getRandomNumber(5, ((fare / 100) * 10)),
+      invoiceId:`2324KA007${getRandomNumber(1000000,9999999)}`
     }
     localStorage.rapido = JSON.stringify(obj);
     resolve();

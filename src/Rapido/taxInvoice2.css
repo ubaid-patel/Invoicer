@@ -1,0 +1,19 @@
+.custdetails{
+    text-align: left;
+    max-width: 220px;
+}
+.details h3,.custdetails h3{
+    margin: 0px;
+}
+.details p,.custdetails p{
+    margin: 0px;
+    margin-top: 0px;
+    color: #979797;
+    line-height: 22px;
+}
+.qrcode img,.details{
+    height: 170px;
+}
+.custdetails{
+    margin-bottom: 40px;
+}

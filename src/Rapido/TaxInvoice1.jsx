@@ -1,106 +1,96 @@
+import './taxinvoice1.css'
 function TaxInvoice1() {
+    const data = JSON.parse(localStorage.rapido)
     return (<>
-        <meta charSet="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>rapidop2</title>
-        <div className="rap  ">
-            <div
-                className="hadding"
-                style={{ display: "inline", margin: 0, padding: 0 }}
-            >
-                <img
-                    src="download (3).png"
-                    alt=""
-                    style={{
-                        width: "10%",
-                        float: "right",
-                        marginTop: "-30px",
-                        display: "inline"
-                    }}
-                />
-                <h2 style={{ display: "flex" }}>Tax Invoice</h2>
-                <p style={{ color: "rgb(141, 143, 143)", maxResolution: 0, padding: 0 }}>
-                    RD17105875553312230
-                </p>
+        <div className="main">
+            <div className="header row">
+                <div className="col txinv">
+                    <h2>Tax Invoice</h2>
+                    <span>{data.rideId}</span>
+                </div>
+                <div>
+                    <img src="logo.jpg" alt="" />
+                </div>
             </div>
-            <p style={{ display: "flex" }}>Invoice No.</p>
-            <p style={{ marginLeft: "90%", marginTop: "-35px", fontSize: 16 }}>
-                2324KA0078726660
-            </p>
-            <p style={{ display: "flex", fontSize: 16 }}>Invoice Date</p>
-            <p style={{ marginLeft: "80%", marginTop: "-35px", fontSize: 16 }}>
-                Mar 16th 2024, 6:08 PM
-            </p>
-            <p style={{ display: "flex" }}>State</p>
-            <p style={{ marginLeft: "90%", marginTop: "-35px", fontSize: 16 }}>
-                Karnataka
-            </p>
-            <p style={{ display: "flex", fontSize: 16 }}>Tax Category</p>
-            <hr style={{ width: "50%", color: "rgb(205, 207, 207)", float: "left" }} />
-            <p style={{ float: "right", marginTop: "-15px" }}>
-                Other local transportation services of <br /> passengers n.e.c. (996419){" "}
-                <br />
-            </p>
-            <br />
-            <br />
-            <p style={{ display: "flex", fontSize: 16 }}>Place of Supply</p>
-            <p style={{ marginLeft: "90%", marginTop: "-35px", fontSize: 16 }}>
-                Karnataka
-            </p>
-            <p style={{ display: "flex", fontSize: 16 }}>GST Number </p>
-            <p style={{ marginLeft: "90%", marginTop: "-35px", fontSize: 16 }}>
-                29AAHCR1710J1ZC
-            </p>
-            <p style={{ display: "flex", fontSize: 16 }}>Captain Name</p>
-            <p style={{ marginLeft: "90%", marginTop: "-35px", fontSize: 16 }}>
-                Shiva Shankar
-            </p>
-            <p style={{ display: "flex", fontSize: 16 }}>Vehicle Number</p>
-            <p style={{ marginLeft: "90%", marginTop: "-35px", fontSize: 16 }}>
-                KA05LP7930
-            </p>
-            <hr style={{ width: "100%", color: "rgb(205, 207, 207)" }} />
-            <p style={{ display: "flex", fontSize: 16 }}>Customer Name</p>
-            <p style={{ marginLeft: "90%", marginTop: "-35px", fontSize: 16 }}>
-                Ayub Ali
-            </p>
-            <p>Customer Pick Up Address</p>
-            <p>
-                Jaya Prakash Nagar, Kanakapura Rd, Gangadhar <br />
-                Nagar, Umarbagh Layout, J. P. Nagar,
-                <br /> Bengaluru, Karnataka 560078, India
-            </p>
-            <br />
-            <h2>Bill Details</h2>
-            <p style={{ display: "flex", fontSize: 16 }}>Captain Fee</p>
-            <p style={{ marginLeft: "90%", marginTop: "-35px", fontSize: 16 }}>
-                ₹ 232.18
-            </p>
-            <p style={{ display: "flex", fontSize: 16 }}>CGST (2.5%)</p>
-            <p style={{ marginLeft: "90%", marginTop: "-35px", fontSize: 16 }}>
-                ₹ 5.80
-            </p>
-            <p style={{ display: "flex", fontSize: 16 }}>SGST (2.5%)</p>
-            <p style={{ marginLeft: "90%", marginTop: "-35px", fontSize: 16 }}>
-                ₹ 5.80
-            </p>
-            <p style={{ display: "flex", fontSize: 16 }}>IGST (0%)</p>
-            <p style={{ marginLeft: "90%", marginTop: "-35px", fontSize: 16 }}>
-                ₹ 0.00
-            </p>
-            <hr style={{ width: "100%", color: "rgb(205, 207, 207)" }} />
-            <p style={{ display: "flex", fontSize: 16 }}>Ride Charge</p>
-            <p style={{ marginLeft: "90%", marginTop: "-35px", fontSize: 16 }}>
-                ₹ 243.78
-            </p>
-            <p style={{ color: "rgb(141, 143, 143)" }}>(Inclusive of Taxes)</p>
-            <p style={{ textAlign: "center", color: "rgb(141, 143, 143)" }}>
-                This document is issued by Transport Service Provider and not by Roppen{" "}
-                <br />
-                Transportation Services Private Limited (Rapido). Rapido acts only as an{" "}
-                <br />
-                Electronic Commerce Operator for the transportation services.
-            </p>
+
+            <div className="info col">
+                <div className="row">
+                    <div>Invoice No.</div>
+                    <div>{data.invoiceId}</div>
+                </div>
+                <div className="row">
+                    <div>Invoice Date</div>
+                    <div>{data.date}</div>
+                </div>
+                <div className="row">
+                    <div>State</div>
+                    <div>Karnataka</div>
+                </div>
+                <div className="row">
+                    <div>Tax Category</div>
+                    <div>Other local transportation services of <br /> passengers n.e.c. (996419){" "}</div>
+                </div>
+                <div className="row">
+                    <div>Place of Supply</div>
+                    <div>Karnataka</div>
+                </div>
+                <div className="row">
+                    <div>GST Number</div>
+                    <div>29AAHCR1710J1ZC</div>
+                </div>
+                <div className="row">
+                    <div>Captain Name</div>
+                    <div>{data.rider}</div>
+                </div>
+                <div className="row">
+                    <div>Vehicle Number</div>
+                    <div>{data.vehicleNumber}</div>
+                </div>
+                <div className="row">
+                    <div className="col">
+                    <div>Customer Name</div>
+                    <div className="inv1pickup">
+                        <div>Customer Pick Up Address</div>
+                        <div>{data.pickup}</div>
+                    </div>
+                    </div>
+                    <div>{data.name}</div>
+                </div>
+            </div>
+
+            <div className="billDtails">
+                <h2>Bill Details</h2>
+                <div className="row">
+                    <div>Captain Fee</div>
+                    <div>₹ {((data.rideCharges / 100) * 95).toFixed(2)}</div>
+                </div>
+                <div className="row">
+                    <div>CGST (2.5%)</div>
+                    <div> ₹ {((data.rideCharges / 100) * 2.5).toFixed(2)}</div>
+                </div>
+                <div className="row">
+                    <div>SGST (2.5%)</div>
+                    <div> ₹ {((data.rideCharges / 100) * 2.5).toFixed(2)}</div>
+                </div>
+                <div className="row">
+                    <div>IGST (0%)</div>
+                    <div>₹ 0.00</div>
+                </div>
+                <div className="row">
+                    <div className="col billRideCharges">
+                        <div>Ride Charge</div>
+                        <div>(Inclusive of Taxes)</div>
+                    </div>
+                    <div className='ridecrg'> ₹ {(data.rideCharges).toFixed(2)}</div>
+                </div>
+                <div className="tax1decl">
+                    This document is issued by Transport Service Provider and not by Roppen{" "}
+                    <br />
+                    Transportation Services Private Limited (Rapido). Rapido acts only as an{" "}
+                    <br />
+                    Electronic Commerce Operator for the transportation services.
+                </div>
+            </div>
         </div>
     </>
     )

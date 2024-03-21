@@ -1,0 +1,57 @@
+.txinv h2{
+    text-align: left;
+    margin: 0px;
+    margin-top: 10px;
+}
+.txinv span{
+    color: #979797;
+}
+.info,.billDtails{
+    margin: 20px;
+    background-color: white;
+    padding: 18px;
+    box-sizing: border-box;
+}
+.info .row div,.billDtails .row div{
+    flex: 1;
+}
+.info .row div:nth-child(even),.billDtails .row div:nth-child(even){
+    text-align: right;
+}
+.info .row div:nth-child(odd),.billDtails .row div:nth-child(odd){
+    text-align: left;
+}
+.billRideCharges div:last-child{
+    text-align: left !important;
+}
+.billDtails h2{
+    text-align: left;
+}
+.tax1decl{
+    width: 100%;
+    margin: auto;
+    text-align: center;
+    color: #8a8a8a;
+}
+.info .row:last-child{
+    
+}
+.inv1pickup{
+    margin-top: 15px;
+}
+.inv1pickup div:last-child{
+    text-align: left !important;
+    color: #979797;
+    max-width: 200px;
+    line-height: 22px;
+}
+.ridecrg{
+    font-size: 24px;
+}
+.billRideCharges{
+    font-size: 24px;
+}
+.billRideCharges div:last-child{
+    font-size: 14px;
+    color: #8a8a8a;
+}
