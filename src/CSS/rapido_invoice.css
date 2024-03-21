@@ -1,0 +1,105 @@
+.main{
+    background-color: rgba(235, 234, 234, 0.657);
+    padding: 20px;
+    max-width: 80%;
+    box-sizing: border-box;
+    margin: auto;
+}
+.row{
+    display: flex;
+    flex-direction: row;
+}
+.column{
+    display: flex;
+    flex-direction: column;
+}
+.header{
+    align-items: center;
+}
+.header div{
+    flex: 1;
+}
+.header img{
+    display: block;
+    height: 100px;
+    float: right;
+}
+.header h3{
+}
+.dot{
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    border: 5px solid white;
+    background-color:white;
+}
+.pickup .dot{
+    border-color: green;
+}
+.drop .dot{
+    border-color: red;
+}
+.gap{
+    height: 70px;
+    width: 60px;
+    border-left: 2px solid grey;
+}
+.map{
+    padding: 80px 180px;
+    background-color: rgb(218, 216, 216);
+    align-items: center;
+}
+.error{
+    display: block;
+    height: 50px;
+}
+.rideid .row div{
+    flex: 1;
+}
+.rideid .row:first-child{
+    margin-bottom: 20px;
+}
+.rideid .row div:last-child{
+    text-align: right;
+}
+.total{
+    align-items: center;
+    background-color: white;
+    padding: 30px 0px;
+    width: 100%;
+    box-sizing: border-box;
+    text-align: center;
+    font-size: 20px 0px;
+    font-size: 24px;
+    font-weight: 500;
+}
+.addrmap div:first-child{
+    flex: 6;
+}
+.addrmap div:last-child{
+    flex: 4;
+}
+.billdetails .row div{
+    flex: 1;
+}
+.billdetails .row div:last-child{
+    text-align: right;
+}
+.billdetails .row .column div:last-child{
+    text-align: left;
+}
+.paymentmethod{
+    background-color: white;
+}
+.paymentmethod div{
+    flex: 1;
+}
+.pmtotal{
+    text-align: right;
+}
+.info{
+    text-align: center;
+}
+.addrmap{
+    align-items: center;
+}
