@@ -16,7 +16,6 @@ function getRandomAlphabets() {
   return randomAlphabet1 + randomAlphabet2;
 }
 
-
 function calculatefare(distance) {
   let cost = 0;
   for (let index = 0; index < distance; index++) {
@@ -65,8 +64,8 @@ function RideDetails() {
       <h1>Ride Details</h1>
       <form action="" method="get" onSubmit={(event)=>{SaveData(event).then(()=>{nav("/rapido_invoice")})}}>
         <div className="field">
-          <label htmlFor="datetime">Date and Time:</label>
-          <input type="datetime-local" id="datetime" name="datetime" required />
+          <label htmlFor="datetime">Date and Time:(Feb 22nd 2024, 6:56 PM)</label>
+          <input type="text" id="datetime" name="datetime" required step={1}/>
         </div>
         <div className="field">
           <label htmlFor="name">Name:</label>
@@ -82,7 +81,7 @@ function RideDetails() {
         </div>
         <div className="field">
           <label htmlFor="distance">Distance:</label>
-          <input type="number" id="distance" name="distance" required />
+          <input type="text" id="distance" name="distance" required />
         </div>
         <div className="field">
           <label htmlFor="duration">Duration:</label>
