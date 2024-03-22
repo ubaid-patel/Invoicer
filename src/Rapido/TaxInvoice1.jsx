@@ -27,7 +27,10 @@ function TaxInvoice1() {
                     <div>Karnataka</div>
                 </div>
                 <div className="row">
-                    <div>Tax Category</div>
+                    <div className='column'>
+                        <div>Tax Category</div>
+                        <div className="txcatbrdr"><div/></div>
+                    </div>
                     <div>Other local transportation services of <br /> passengers n.e.c. (996419){" "}</div>
                 </div>
                 <div className="row">
@@ -46,13 +49,13 @@ function TaxInvoice1() {
                     <div>Vehicle Number</div>
                     <div>{data.vehicleNumber}</div>
                 </div>
-                <div className="row">
+                <div className="row custnm">
                     <div className="col">
-                    <div>Customer Name</div>
-                    <div className="inv1pickup">
-                        <div>Customer Pick Up Address</div>
-                        <div>{data.pickup}</div>
-                    </div>
+                        <div>Customer Name</div>
+                        <div className="inv1pickup">
+                            <div>Customer Pick Up Address</div>
+                            <div>{data.pickup}</div>
+                        </div>
                     </div>
                     <div>{data.name}</div>
                 </div>
@@ -76,7 +79,7 @@ function TaxInvoice1() {
                     <div>IGST (0%)</div>
                     <div>₹ 0.00</div>
                 </div>
-                <div className="row">
+                <div className="row ridecrg">
                     <div className="col billRideCharges">
                         <div>Ride Charge</div>
                         <div>(Inclusive of Taxes)</div>

@@ -1,6 +1,9 @@
 .App {
   text-align: center;
 }
+.page-break {
+  page-break-before: always; /* Insert page break before element */
+}
 
 .App-logo {
   height: 40vmin;
@@ -55,6 +58,22 @@ h1 {
   display: flex;
   justify-content: center;
   margin-bottom: 20px;
+}
+@media print {
+  /* Hide the custom page break element on the printed document */
+  .custom-page-break {
+    display: none;
+  }
+}
+.printbtn{
+  display: block;
+  height: 30px;
+  width: 100px;
+  margin: auto;
+  background-color: #d67219;
+  border-radius: 10px;
+  border: none;
+  outline: none;
 }
 .client-button {
   background-color: #009688;

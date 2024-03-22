@@ -2,6 +2,21 @@
     text-align: left;
     margin: 0px;
     margin-top: 10px;
+    font-weight: 600;
+    font-size: 26px;
+}
+.txcatbrdr div{
+    height: 2px;
+    width: 130%;
+    background-color: #ededed;
+    margin-top: 12px;
+}
+.custnm,.ridecrg{
+    border-top: 2px solid #ededed;
+    padding-top: 10px;
+}
+.ridecrg,.billRideCharges div:last-child{
+    padding-top: 10px;
 }
 .txinv span{
     color: #979797;
@@ -26,12 +41,16 @@
 }
 .billDtails h2{
     text-align: left;
+    font-size: 24px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 500;
 }
 .tax1decl{
     width: 100%;
     margin: auto;
     text-align: center;
     color: #8a8a8a;
+    margin-top: 6px;
 }
 .info .row:last-child{
     
@@ -42,7 +61,7 @@
 .inv1pickup div:last-child{
     text-align: left !important;
     color: #979797;
-    max-width: 200px;
+    max-width: 500px;
     line-height: 22px;
 }
 .ridecrg{

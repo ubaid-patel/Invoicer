@@ -23,7 +23,7 @@ export default function TaxInvoice2() {
     const data = JSON.parse(localStorage.rapido)
     return (
         <React.Fragment>
-            <div className="header row">
+            <div className="header row inv2">
                 <div className="col txinv">
                     <h2>Tax Invoice</h2>
                     <span>{data.rideId}</span>
@@ -65,7 +65,7 @@ export default function TaxInvoice2() {
                 </div>
                 <div className="row">
                     <div>Tax Category</div>
-                    <div>Other local transportation services of <br /> passengers n.e.c. (996419){" "}</div>
+                    <div>Other services n.e.c.(999799)</div>
                 </div>
                 <div className="row">
                     <div>Place of Supply</div>
@@ -86,9 +86,9 @@ export default function TaxInvoice2() {
                     <div>Convenience Charges</div>
                     <div>₹ {(data.bookingFee).toFixed(2)}</div>
                 </div>
-                <div className="row">
-                    <div>Sub total</div>
-                    <div>₹ {(data.bookingFee + 1).toFixed(2)}</div>
+                <div className="row subttlr">
+                    <div><h3 className="sbttl">Sub total</h3></div>
+                    <div className="sbttl">₹ {(data.bookingFee + 1).toFixed(2)}</div>
                 </div>
                 <div className="row">
                     <div>CGST (9%)</div>
@@ -102,19 +102,18 @@ export default function TaxInvoice2() {
                     <div>IGST (0%)</div>
                     <div>₹ 0.00</div>
                 </div>
-                <div className="row">
+                <div className="row fnlamt">
                     <div className="col billRideCharges">
                         <div>Final Amount</div>
                         <div>(Inclusive of Taxes)</div>
                     </div>
-                    <div className="ridecrg"> ₹ {(data.bookingFee + 1 + (data.bookingFee + 1) * 0.18).toFixed(2)}</div>
+                    <div className="ridecrg ridecrg2"> ₹ {(data.bookingFee + 1 + (data.bookingFee + 1) * 0.18).toFixed(2)}</div>
                 </div>
                 <div className="tax1decl">
-                    This document is issued by Transport Service Provider and not by Roppen{" "}
-                    <br />
-                    Transportation Services Private Limited (Rapido). Rapido acts only as an{" "}
-                    <br />
-                    Electronic Commerce Operator for the transportation services.
+                    This is a system generated invoice and hence no signature required
+                </div>
+                <div className="greetings">
+                    Thank you {data.name}
                 </div>
             </div>
         </React.Fragment>

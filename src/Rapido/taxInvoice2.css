@@ -1,8 +1,17 @@
+.paymentsummary{
+
+}
+.inv2{
+    padding-bottom: 0px !important;
+}
 .custdetails{
     text-align: left;
     max-width: 220px;
 }
 .details h3,.custdetails h3{
+    font-size: 22px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 500;
     margin: 0px;
 }
 .details p,.custdetails p{
@@ -11,9 +20,36 @@
     color: #979797;
     line-height: 22px;
 }
+.details{
+    flex: 7 !important;
+}
+.qrcode{
+    flex: 3 !important;
+}
+.ridecrg2{
+    border: none;
+
+}
+.sbttl{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 22px;
+    font-weight: 500;
+    margin: 0px;
+}
+.subttlr,.fnlamt{
+    border-top: 2px solid #ededed;
+    padding-top: 3px;
+}
+.fnlamt{
+    padding-top: 10px;
+}
 .qrcode img,.details{
     height: 170px;
 }
 .custdetails{
-    margin-bottom: 40px;
+    margin-bottom: 20px;
+}
+.greetings{
+    text-align: center;
+    margin-top: 3px;
 }

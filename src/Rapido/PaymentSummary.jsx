@@ -2,7 +2,7 @@ import '../CSS/rapido_invoice.css'
 export default function PaymentSummary() {
     const data = JSON.parse(localStorage.rapido)
     return (
-        <div className='main'>
+        <div className='main paymentsummary'>
             <div className="row header">
                 <div><h3>Payment Summary</h3></div>
                 <div><img src="logo.jpg" alt="" /></div>
@@ -11,11 +11,11 @@ export default function PaymentSummary() {
             <div className="column rideid">
                 <div className="row">
                     <div>Ride ID</div>
-                    <div>{data.rideId}</div>
+                    <div><div>{data.rideId}</div></div>
                 </div>
                 <div className="row">
                     <div>Time of Ride</div>
-                    <div>{data.date}</div>
+                    <div><div>{data.date}</div></div>
                 </div>
             </div>
 
@@ -29,10 +29,10 @@ export default function PaymentSummary() {
             <div className="row addrmap" >
                 <div className="column map">
                     <img src="error.svg" alt="" className="error" />
-                    <p>This site can't load google Maps Correctly.</p>
-                    <p>g.co/staticmaperror/signature</p>
+                    <p>This site can't load google Maps Correctly.<br/>
+                    g.co/staticmaperror/signature</p>
                 </div>
-                <div className="info">
+                <div className="infops">
                     <div className="column distance">
                         <div className="vericalItem">{(((data.distance)*100)/100).toFixed(2)} kms</div>
                         <div className="vericalItem">Distance</div>
@@ -46,14 +46,12 @@ export default function PaymentSummary() {
             </div>
 
             <div className="column addressdetails">
-                <p className="row pickup">
-                    <div className="dot" />
-                    <div> &nbsp;&nbsp;&nbsp; {data.pickup}</div>
+                <p className="pickup">
+                    <div><div className="dot" /> &nbsp;&nbsp;{data.pickup}</div>
                 </p>
                 <div className="gap" />
-                <div className="row drop">
-                    <div className="dot" />
-                    <div>&nbsp;&nbsp;&nbsp;&nbsp;{data.drop}</div>
+                <div className="drop">
+                    <div><div className="dot" />&nbsp;&nbsp; {data.drop}</div>
                 </div>
             </div>
 
