@@ -56,6 +56,9 @@
 .rideid,.header,.addrmap,.addressdetails,.billdetails,.paymentmethod{
     margin: 0px 20px;
 }
+.ttlchrgps{
+    font-size: 32px !important;
+}
 .dot{
     width: 8px;
     height: 8px;

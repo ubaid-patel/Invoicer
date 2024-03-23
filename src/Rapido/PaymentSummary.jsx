@@ -22,7 +22,7 @@ export default function PaymentSummary() {
             <div className="total">
                 <div className="column">
                     <div className="vericalItem">Total</div>
-                    <div className="vericalItem">₹ {(((data.rideCharges+data.bookingFee)*100)/100).toFixed(2)}</div>
+                    <div className="vericalItem ttlchrgps">₹ {(((data.rideCharges+data.bookingFee)*100)/100).toFixed(2)}</div>
                 </div>
             </div>
 
