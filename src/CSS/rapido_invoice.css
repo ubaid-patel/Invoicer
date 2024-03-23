@@ -50,7 +50,7 @@
 }
 .billdetails h3{
     font-weight: 500;
-    font-size: 24px;
+    font-size: 22px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 .rideid,.header,.addrmap,.addressdetails,.billdetails,.paymentmethod{
@@ -175,7 +175,7 @@
     background-color: white;
     padding: 15px;
     margin-top: 20px;
-    padding-bottom: 20px;
+    padding-bottom: 60px;
     align-items: center;
 }
 .paymentmethod .column div:first-child{
@@ -212,8 +212,8 @@
     margin-bottom: 10px;
 }
 .distance div:first-child,.duration div:first-child{
-    font-size: 26px;
-    font-weight: 100;
+    font-size: 24px;
+    color: #020202;
 
 }
 .distance div:last-child,.duration div:last-child{

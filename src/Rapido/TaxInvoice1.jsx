@@ -79,7 +79,7 @@ function TaxInvoice1() {
                     <div>IGST (0%)</div>
                     <div>₹ 0.00</div>
                 </div>
-                <div className="row ridecrg ridecrgtx1">
+                <div className="row ridecrgcnt">
                     <div className="col billRideCharges">
                         <div>Ride Charge</div>
                         <div>(Inclusive of Taxes)</div>

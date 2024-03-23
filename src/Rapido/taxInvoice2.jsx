@@ -36,7 +36,7 @@ export default function TaxInvoice2() {
             <div className="info col">
                 <div className="qrdetails row">
                     <div className="details">
-                        <h3>Roppen Transportation Private Limited</h3>
+                        <h3 className="txinv2coname">Roppen Transportation Private Limited</h3>
                         <p>80/1,81/1,81/2, Green Glen <br />
                            Layout, Salarpuria Softzone,<br />
                             Bellandur Village, Varthur<br />

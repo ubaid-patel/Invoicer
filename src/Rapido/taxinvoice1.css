@@ -12,11 +12,14 @@
     margin-top: 12px;
 }
 .custnm,.ridecrg{
-    border-top: 2px solid #ededed;
+  
     padding-top: 10px;
 }
 .ridecrgtx1{
     border-top: none;
+}
+.ridecrgcnt{
+    border-top: 2px solid #ededed;
 }
 .ridecrg,.billRideCharges div:last-child{
     padding-top: 10px;
