@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import '../CSS/orderform.css'; // Assuming you have a CSS file with the provided styles
+import '../CSS/details.module.css'; // Assuming you have a CSS file with the provided styles
 
 function OrderForm() {
   const [items, setItems] = useState([{ item: '', quantity: '', unitPrice: '' }]);

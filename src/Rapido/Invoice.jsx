@@ -1,18 +1,19 @@
-import React from "react"
-import PaymentSummary from "./PaymentSummary"
-import TaxInvoice1 from "./TaxInvoice1"
-import TaxInvoice2 from "./taxInvoice2"
-import '../CSS/App.css'
+import React from "react";
+import styles from '../CSS/app.module.css'; // Import CSS module
+import PaymentSummary from "./PaymentSummary";
+import TaxInvoice1 from "./TaxInvoice1";
+import TaxInvoice2 from "./taxInvoice2";
+import Map from './Map';
 
 function copyText() {
-    const data = JSON.parse(localStorage.rapido)
+    const data = JSON.parse(localStorage.rapido);
     let text = `invoicefile${data.rideId}`;
     // Attempt to copy using the Clipboard API
     if (navigator.clipboard) {
         navigator.clipboard.writeText(text)
             .then(() => {
                 const btn = document.getElementById("printbtn");
-                btn.style="display:none";
+                btn.style.display = "none";
             })
             .catch(err => {
                 console.error('Could not copy text: ', err);
@@ -34,18 +35,20 @@ function copyText() {
         document.body.removeChild(textarea);
     }
 }
+
 export default function RapidoInvoice() {
-    window.onbeforeprint=copyText;
+    window.onbeforeprint = copyText;
     return (
         <React.Fragment>
             <PaymentSummary />
-            <div class="page-break"></div>
+            <div className={styles['page-break']}></div>
             <TaxInvoice1 />
-            <div class="page-break"></div>
+            <div className={styles['page-break']}></div>
             <TaxInvoice2 />
-            <button id="printbtn" className="printbtn" onClick={()=>{new Promise((resolve,reject)=>{copyText();setTimeout(() => {resolve()}, 500);}).then(()=>{window.print()})}}>
+            <button id="printbtn" className={styles.printbtn} onClick={() => { new Promise((resolve, reject) => { copyText(); setTimeout(() => { resolve() }, 500); }).then(() => { window.print() }) }}>
                 Print
             </button>
+            <Map />
         </React.Fragment>
-    )
+    );
 }

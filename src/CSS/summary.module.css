@@ -89,6 +89,10 @@
     top: 0px;
     left: 0px;
 }
+.real{
+    height: 500px;
+    padding: 0px;
+  }
 .gap{
     height: 40px;
     width: 55px;

@@ -1,0 +1,97 @@
+.App {
+    text-align: center;
+  }
+  .page-break {
+    page-break-before: always; /* Insert page break before element */
+  }
+  
+  .App-logo {
+    height: 40vmin;
+    pointer-events: none;
+  }
+  
+  @media (prefers-reduced-motion: no-preference) {
+    .App-logo {
+      animation: App-logo-spin infinite 20s linear;
+    }
+  }
+  /* .mapboxgl-ctrl-top-right {
+    display: none;
+  } */
+  .mapboxgl-ctrl-bottom-left{
+    display: none;
+  }
+  
+  .App-header {
+    background-color: #282c34;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: white;
+  }
+  
+  .App-link {
+    color: #61dafb;
+  }
+  
+  @keyframes App-logo-spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #fafafa;
+    margin: 0;
+    padding: 0;
+  }
+  .container {
+    max-width: 600px;
+    margin: 50px auto;
+    text-align: center;
+  }
+  h1 {
+    color: #333;
+    margin-bottom: 20px;
+  }
+  .client-selection {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+  @media print {
+    /* Hide the custom page break element on the printed document */
+    .custom-page-break {
+      display: none;
+    }
+  }
+  .printbtn{
+    display: block;
+    height: 30px;
+    width: 100px;
+    margin: auto;
+    background-color: #d67219;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+  }
+  .client-button {
+    background-color: #009688;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 0 10px;
+    transition: background-color 0.3s;
+  }
+  .client-button:hover {
+    background-color: #00796b;
+  }

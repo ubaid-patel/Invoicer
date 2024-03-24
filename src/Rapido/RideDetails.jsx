@@ -1,5 +1,5 @@
 import React from 'react';
-import '../CSS/ride.css'; // Assuming you have a CSS file with the provided styles
+import styles from '../CSS/details.module.css'; // Import CSS module
 import riders from '../riders';
 import { useNavigate } from 'react-router-dom';
 
@@ -27,17 +27,15 @@ function calculatefare(distance) {
       cost += 11.5;
     }
   }
-  return (cost);
+  return cost;
 }
 
 function SaveData(event) {
-  return (new Promise((resolve, reject) => {
+  return new Promise((resolve, reject) => {
     event.preventDefault();
     const data = new FormData(event.target);
     const fare = calculatefare(data.get('distance'));
 
-    //What need to be derived or generated
-    //rideid,conviniencefee,invoiceno,vehicle no,captian name,taxes
     const obj = {
       name: data.get('name'),
       date: data.get('datetime'),
@@ -51,52 +49,44 @@ function SaveData(event) {
       vehicleNumber: "KA" +getRandomNumber(10,40)+getRandomAlphabets() + getRandomNumber(1000, 9999),
       bookingFee: getRandomNumber(5, ((fare / 100) * 10)),
       invoiceId:`2324KA007${getRandomNumber(1000000,9999999)}`
-    }
+    };
     localStorage.rapido = JSON.stringify(obj);
     resolve();
-  }))
+  });
 }
 
 
 function RideDetails() {
   const nav = useNavigate();
   return (
-    <div className="container">
+    <div className={`${styles.container}`}>
       <h1>Ride Details</h1>
       <form action="" method="get" onSubmit={(event)=>{SaveData(event).then(()=>{nav("/rapido_invoice")})}}>
-        <div className="field">
+        <div className={`${styles.field}`}>
           <label htmlFor="datetime">Date and Time:(Feb 22nd 2024, 6:56 PM)</label>
           <input type="text" id="datetime" name="datetime" required step={1}/>
         </div>
-        <div className="field">
+        <div className={`${styles.field}`}>
           <label htmlFor="name">Name:</label>
           <input type="text" id="name" name="name" required />
         </div>
-        <div className="field">
+        <div className={`${styles.field}`}>
           <label htmlFor="pickup">Pickup Location:</label>
           <input type="text" id="pickup" name="pickup" required />
         </div>
-        <div className="field">
+        <div className={`${styles.field}`}>
           <label htmlFor="drop">Drop Location:</label>
           <input type="text" id="drop" name="drop" required />
         </div>
-        <div className="field">
+        <div className={`${styles.field}`}>
           <label htmlFor="distance">Distance:</label>
           <input type="text" id="distance" name="distance" required />
         </div>
-        <div className="field">
+        <div className={`${styles.field}`}>
           <label htmlFor="duration">Duration:</label>
           <input type="text" id="duration" name="duration" required />
         </div>
-        {/* <div className="field">
-          <label htmlFor="captain">Captain Name:</label>
-          <input type="text" id="captain" name="captain" required />
-        </div>
-        <div className="field">
-          <label htmlFor="vehicle">Vehicle Number:</label>
-          <input type="text" id="vehicle" name="vehicle" required />
-        </div> */}
-        <button type='submit' className="button">Generate invoice</button>
+        <button type='submit' className={`${styles.button}`}>Generate invoice</button>
       </form>
     </div>
   );
