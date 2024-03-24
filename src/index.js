@@ -6,12 +6,13 @@ import RideDetails from './Rapido/RideDetails';
 import OrderForm from './Zomato/OrderForm';
 import RapidoInvoice from './Rapido/Invoice';
 import { Route, BrowserRouter, Routes } from 'react-router-dom';
-
+import { Provider } from 'react-redux'
+import { store } from './redux/store';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
-    <BrowserRouter>
+   <Provider store={store}>
+     <BrowserRouter>
       <Routes>
         <Route path='' Component={App} />
         <Route path='/ride_details' Component={RideDetails} />
@@ -19,7 +20,7 @@ root.render(
         <Route path='/rapido_invoice' Component={RapidoInvoice} />
       </Routes>
     </BrowserRouter>
-  </React.StrictMode>
+   </Provider>
 );
 
 // If you want to start measuring performance in your app, pass a function

@@ -2,11 +2,12 @@ import React from "react";
 import styles from '../CSS/app.module.css'; // Import CSS module
 import Summary from "./Summary";
 import RideTax from "./RideTax";
-import serviceTax from "./ServiceTax";
 import Map from './Map';
+import ServiceTax from "./ServiceTax";
+import { useSelector, useDispatch } from 'react-redux'
 
-function copyText() {
-    const data = JSON.parse(localStorage.rapido);
+function copyText(data) {
+    
     let text = `invoicefile${data.rideId}`;
     // Attempt to copy using the Clipboard API
     if (navigator.clipboard) {
@@ -37,18 +38,19 @@ function copyText() {
 }
 
 export default function RapidoInvoice() {
-    window.onbeforeprint = copyText;
+    const data = useSelector((state)=>state.data.data);
+    console.log(data)
+    window.onbeforeprint = ()=>{copyText(data)};
     return (
         <React.Fragment>
             <Summary/>
             <div className={styles['page-break']}></div>
             <RideTax />
             <div className={styles['page-break']}></div>
-            <serviceTax />
-            <button id="printbtn" className={styles.printbtn} onClick={() => { new Promise((resolve, reject) => { copyText(); setTimeout(() => { resolve() }, 500); }).then(() => { window.print() }) }}>
+            <ServiceTax />
+            <button id="printbtn" className={styles.printbtn} onClick={() => { new Promise((resolve, reject) => { copyText(data); setTimeout(() => { resolve() }, 500); }).then(() => { window.print() }) }}>
                 Print
             </button>
-            <Map />
         </React.Fragment>
     );
 }

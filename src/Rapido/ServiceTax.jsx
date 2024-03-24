@@ -1,5 +1,6 @@
 import React from "react";
 import styles from '../CSS/serviceTax.module.css'; // Import CSS module
+import { useSelector } from "react-redux";
 
 function generateQRUrl() {
     const info = JSON.parse(localStorage.rapido);
@@ -19,8 +20,8 @@ UPI ID: RAPIDO.06@CMSIDFC`);
     return (qrUrl);
 }
 
-export default function serviceTax() {
-    const data = JSON.parse(localStorage.rapido);
+export default function ServiceTax() {
+    const data = useSelector((state)=>state.data.data);
     return (
         <React.Fragment>
             <div className={`${styles.header} ${styles.row} ${styles.inv2}`}>

@@ -1,7 +1,8 @@
-import styles from '../CSS/taxInvoice1.module.css'; // Import CSS module
+import styles from '../CSS/rideTax.module.css'; // Import CSS module
+import { useSelector, useDispatch } from 'react-redux'
 
 function RideTax() {
-    const data = JSON.parse(localStorage.rapido);
+    const data = useSelector((state)=>state.data.data);
     return (
         <>
             <div className={styles.main}>

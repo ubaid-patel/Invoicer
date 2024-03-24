@@ -1,3 +1,40 @@
+.header{
+    align-items: center;
+    padding:0px 0px 0px 0px; 
+}
+.map{
+    height: 500px;
+}
+.row{
+    display: flex;
+    flex-direction: row;
+}
+.header div{
+    flex: 1;
+}
+.header img{
+    display: block;
+    height: 50px;
+    float: right;
+}
+.header h3{
+   
+}
+.billdetails{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.billdetails h3{
+    font-weight: 500;
+    font-size: 22px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.rideid,.header,.addrmap,.addressdetails,.billdetails,.paymentmethod{
+    margin: 0px 20px;
+}
+.ttlchrgps{
+    font-size: 38px !important;
+}
+
 .paymentsummary{
 
 }
@@ -137,4 +174,285 @@
 .billRideCharges div:last-child{
     font-size: 14px;
     color: #8a8a8a;
+}
+.main{
+    background-color: #fafafa;
+    max-width: 100%;
+    box-sizing: border-box;
+    margin: auto;
+    min-height: 900px;
+}
+.rideid{
+    font-family: serif;
+    font-size: 22px;
+    font-weight: 500;
+}
+.rideid .row:first-child div:last-child div{
+    letter-spacing: 1px;
+    margin-right: -2px;
+}
+.row{
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 10px;
+}
+.col{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+}
+.column{
+    display: flex;
+    flex-direction: column;
+}
+.header{
+    align-items: center;
+    padding:0px 0px 0px 0px; 
+}
+.header div{
+    flex: 1;
+}
+.header img{
+    display: block;
+    height: 50px;
+    float: right;
+}
+.header h3{
+   
+}
+.billdetails{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.billdetails h3{
+    font-weight: 500;
+    font-size: 22px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.rideid,.header,.addrmap,.addressdetails,.billdetails,.paymentmethod{
+    margin: 0px 20px;
+}
+.ttlchrgps{
+    font-size: 38px !important;
+}
+.dot{
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    border: 5px solid white;
+    background-color:white;
+    float: left;
+    
+}
+.pkaddr{
+    
+}
+.pickup .dot{
+    border-color: green;
+}
+.dotcont{
+}
+.pickup{
+    position: relative;
+    margin-bottom: 0px;
+}
+.drop{
+    position: relative;
+    margin-top: 0px;
+}
+.drop .dot{
+    border-color: red;
+    top: 0px;
+    left: 0px;
+}
+
+.gap{
+    height: 40px;
+    width: 55px;
+    border-left: 3px solid #c4c4c4;
+    margin-left: 3px;
+}
+.addressdetails{
+    margin-top:20px;
+    margin-bottom: 20px;
+}
+.map{
+    padding: 12px 0px;
+    width: 100%;
+    background-color: #e0e0e0;
+    align-items: center;
+    color: #717171;
+    line-height: 35px;
+}
+.addrmap .distance div:last-child,.duration div:last-child{
+    color: #979797;
+}
+.error{
+    display: block;
+    height: 52px;
+}
+.rideid .row div{
+    flex: 1;
+}
+.rideid .row:first-child{
+    margin-bottom: 10px;
+}
+.rideid .row div:last-child{
+    text-align: right;
+}
+.total{
+    align-items: center;
+    background-color: white;
+    padding: 12px 0px;
+    width: 100%;
+    box-sizing: border-box;
+    text-align: center;
+    font-size: 24px;
+    font-weight: 400;
+    margin: 20px 0px;
+}
+.total .column div:last-child{
+    font-size: 30px;
+}
+.addrmap div:first-child{
+    flex: 6;
+}
+.addrmap div:last-child{
+    flex: 4;
+}
+.billdetails{
+    background-color: white;
+    padding: 15px;
+}
+.billdetails .row div{
+    flex: 1;
+}
+.billdetails .row div:last-child{
+    text-align: right;
+}
+.billdetails .row .column div:last-child{
+    text-align: left;
+}
+.billtotal{
+    border-top: 1px solid #ededed;
+    margin-top: 3px;
+    padding-top: 8px;
+}
+.billtotal .column{
+    font-size: 24px !important;
+}
+.billdetails .row:last-child .column div:first-child{
+    font-size: 24px;
+}
+.billdetails .billtotal div:last-child{
+    font-size: 24px;
+}
+.billdetails .row:last-child .column div:last-child{
+    font-size: 14px;
+    color: #8a8a8a;
+}
+.paymentmethod{
+    background-color: white;
+    padding: 15px;
+    margin-top: 20px;
+    padding-bottom: 60px;
+    align-items: center;
+}
+.paymentmethod .column div:first-child{
+    font-size: 24px;
+}
+.paymentmethod .column div:last-child{
+    font-size: 17px;
+}
+.paymentmethod div{
+    flex: 1;
+}
+.pmtotal{
+    text-align: right;
+    font-size: 20px;
+}
+.infops{
+    text-align: center;
+}
+.addrmap{
+    align-items: center;
+    background-color: white;
+    height: max-content;
+}
+.distancegap{
+    background-color: #979797;
+    height: 3px;
+    width: 50px;
+    margin: 12px auto;
+}
+.billHeading{
+    margin-bottom: 25px;
+}
+.billdetails .row{
+    margin-bottom: 10px;
+}
+.distance div:first-child,.duration div:first-child{
+    font-size: 24px;
+    color: #020202;
+
+}
+.distance div:last-child,.duration div:last-child{
+    font-size: 20px;
+    color: grey;
+}
+
+
+
+.pickNdrop{
+    padding:5px 20px;
+}
+.billdetails .row {
+    margin-bottom: 10px;
+}
+
+.billdetails .row:last-child .column div:first-child {
+    font-size: 24px;
+}
+
+.billdetails .billtotal div:last-child {
+    font-size: 24px;
+}
+
+.billdetails .row:last-child .column div:last-child {
+    font-size: 14px;
+    color: #8a8a8a;
+}
+
+.billdetails .row div {
+    flex: 1;
+}
+
+.billdetails .row div:last-child {
+    text-align: right;
+}
+
+.billdetails .row .column div:last-child {
+    text-align: left;
+}
+
+.rideid .row div {
+    flex: 1;
+}
+
+.rideid .row:first-child {
+    margin-bottom: 10px;
+}
+
+.rideid .row div:last-child {
+    text-align: right;
+}
+
+.rideid .row:first-child div:last-child div {
+    letter-spacing: 1px;
+    margin-right: -2px;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 10px;
 }

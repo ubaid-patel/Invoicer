@@ -1,10 +1,26 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import styles from '../CSS/summary.module.css'; // Import CSS module
-import Mapc from './Map';
+import Map from './Map';
+import { fetchAddress } from './utils';
+import { useSelector, useDispatch } from 'react-redux'
+
+function getAddresses(data){
+    let local = {...data}
+    let addresses = []
+    return(new Promise((resolve,reject)=>{
+        fetchAddress([...local.latNlong[0]].reverse()).then((addr0)=>{
+            document.getElementById("pickup").innerHTML=addr0;
+            fetchAddress([...local.latNlong[1]].reverse()).then((addr1)=>{
+                document.getElementById("drop").innerHTML=addr1;
+                resolve(addresses)
+            })
+        });
+    }))
+}
 
 export default function Summary() {
-    const data = JSON.parse(localStorage.rapido);
-
+    const data = useSelector((state)=>state.data.data);
+   useEffect(()=>{getAddresses(data)},[])
     return (
         <div className={`${styles.main} ${styles.paymentsummary}`}>
             <div className={`${styles.row} ${styles.header}`}>
@@ -29,34 +45,14 @@ export default function Summary() {
                     <div className={`${styles.vericalItem} ${styles.ttlchrgps}`}>₹ {(((data.rideCharges + data.bookingFee) * 100) / 100).toFixed(2)}</div>
                 </div>
             </div>
-
-            <div className={`${styles.row} ${styles.addrmap}`}>
-                <div className={`${styles.column} ${styles.map} ${styles.real}`}>
-                    {/* <img src="error.svg" alt="" className="error" />
-                    <p>This site can't load google Maps Correctly.<br/>
-                    g.co/staticmaperror/signature</p> */}
-                    <Mapc />
-                </div>
-                <div className={styles.infops}>
-                    <div className={`${styles.column} ${styles.distance}`}>
-                        <div className={styles.vericalItem}>{(((data.distance) * 100) / 100).toFixed(2)} kms</div>
-                        <div className={styles.vericalItem}>Distance</div>
-                    </div>
-                    <div className={styles.distancegap} />
-                    <div className={`${styles.column} ${styles.duration}`}>
-                        <div className={styles.vericalItem}>{(((data.duration) * 100) / 100).toFixed(2)} mins</div>
-                        <div className={styles.vericalItem}>Duration</div>
-                    </div>
-                </div>
-            </div>
-
-            <div className={styles.column}>
+            <Map/>
+            <div className={`${styles.column} ${styles.pickNdrop}`}>
                 <p className={styles.pickup}>
-                    <div><div className={styles.dot} /> &nbsp;&nbsp;{data.pickup}</div>
+                    <div><div className={styles.dot} /> &nbsp;&nbsp;<span id="pickup"></span></div>
                 </p>
                 <div className={styles.gap} />
                 <div className={styles.drop}>
-                    <div><div className={styles.dot} />&nbsp;&nbsp; {data.drop}</div>
+                    <div><div className={styles.dot} />&nbsp;&nbsp;<span id="drop"></span></div>
                 </div>
             </div>
 
@@ -85,7 +81,7 @@ export default function Summary() {
             <div className={styles.paymentmethod}>
                 <div className={styles.column}>
                     <div>You Paid Using</div>
-                    <div>Cash</div>{}
+                    <div>Cash</div>{ }
                 </div>
                 <div className={styles.pmtotal}>₹{(((data.rideCharges + data.bookingFee) * 100) / 100).toFixed(2)}</div>
             </div>
