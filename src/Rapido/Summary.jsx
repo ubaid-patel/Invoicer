@@ -2,7 +2,7 @@ import React from 'react';
 import styles from '../CSS/summary.module.css'; // Import CSS module
 import Mapc from './Map';
 
-export default function PaymentSummary() {
+export default function Summary() {
     const data = JSON.parse(localStorage.rapido);
 
     return (

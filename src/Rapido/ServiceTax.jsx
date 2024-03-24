@@ -1,5 +1,5 @@
 import React from "react";
-import styles from '../CSS/taxInvoice2.module.css'; // Import CSS module
+import styles from '../CSS/serviceTax.module.css'; // Import CSS module
 
 function generateQRUrl() {
     const info = JSON.parse(localStorage.rapido);
@@ -19,7 +19,7 @@ UPI ID: RAPIDO.06@CMSIDFC`);
     return (qrUrl);
 }
 
-export default function TaxInvoice2() {
+export default function serviceTax() {
     const data = JSON.parse(localStorage.rapido);
     return (
         <React.Fragment>

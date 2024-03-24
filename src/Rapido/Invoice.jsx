@@ -1,8 +1,8 @@
 import React from "react";
 import styles from '../CSS/app.module.css'; // Import CSS module
-import PaymentSummary from "./PaymentSummary";
-import TaxInvoice1 from "./TaxInvoice1";
-import TaxInvoice2 from "./taxInvoice2";
+import Summary from "./Summary";
+import RideTax from "./RideTax";
+import serviceTax from "./ServiceTax";
 import Map from './Map';
 
 function copyText() {
@@ -40,11 +40,11 @@ export default function RapidoInvoice() {
     window.onbeforeprint = copyText;
     return (
         <React.Fragment>
-            <PaymentSummary />
+            <Summary/>
             <div className={styles['page-break']}></div>
-            <TaxInvoice1 />
+            <RideTax />
             <div className={styles['page-break']}></div>
-            <TaxInvoice2 />
+            <serviceTax />
             <button id="printbtn" className={styles.printbtn} onClick={() => { new Promise((resolve, reject) => { copyText(); setTimeout(() => { resolve() }, 500); }).then(() => { window.print() }) }}>
                 Print
             </button>

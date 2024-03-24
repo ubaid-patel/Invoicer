@@ -1,6 +1,6 @@
 import styles from '../CSS/taxInvoice1.module.css'; // Import CSS module
 
-function TaxInvoice1() {
+function RideTax() {
     const data = JSON.parse(localStorage.rapido);
     return (
         <>
@@ -101,4 +101,4 @@ function TaxInvoice1() {
     );
 }
 
-export default TaxInvoice1;
+export default RideTax;
