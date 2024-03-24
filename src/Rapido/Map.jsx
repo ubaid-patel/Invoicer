@@ -110,7 +110,7 @@ const Map = () => {
 
             </div> <h2 className={styles.watermark}><h2>G</h2>oogle</h2> </> :
             <div className={`${styles.column} ${styles.maperror}`}>
-              <img src="error.svg" alt="" className="error" />
+              <img src="error.svg" alt="" className={styles.error} />
               <p>This site can't load google Maps Correctly.<br />
                 g.co/staticmaperror/signature</p>
             </div>

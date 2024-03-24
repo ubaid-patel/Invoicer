@@ -20,8 +20,8 @@ function RideDetails() {
     const obj = {
       name: data.get('name'),
       date: data.get('datetime'),
-      // pickup: data.get('pickup'),
-      // drop: data.get('drop'),
+      pickup: data.get('pickup'),
+      drop: data.get('drop'),
       duration: data.get('duration'),
       distance: data.get('distance'),
       rideCharges: fare,
@@ -51,17 +51,17 @@ function RideDetails() {
           <label htmlFor="name">Name:</label>
           <input type="text" id="name" name="name" required />
         </div>
-        {/* <div className={`${styles.field}`}>
+        <div className={`${styles.field}`}>
           <label htmlFor="pickup">Pickup Location:</label>
-          <input type="text" id="pickup" name="pickup" required />
+          <input type="text" id="pickup" name="pickup" />
         </div>
         <div className={`${styles.field}`}>
           <label htmlFor="drop">Drop Location:</label>
-          <input type="text" id="drop" name="drop" required />
-        </div> */}
-        <div className={`${styles.field} ${styles.distance}`}>
+          <input type="text" id="drop" name="drop" />
+        </div>
+        <div className={`${styles.field}`}>
           <label htmlFor="distance">Distance:</label>
-          <input type="text" id="distance" name="distance" value={0} />
+          <input type="text" id="distance" name="distance"/>
         </div>
         <div className={`${styles.field}`}>
           <label htmlFor="duration">Duration:</label>
@@ -69,12 +69,12 @@ function RideDetails() {
         </div>
         <div className={`${styles.field}`}>
           <label htmlFor="duration">Pick up latitude,longitude:</label>
-          <input type="text" id="pickLatLong" name="pickLatLong" />
+          <input type="text" id="pickLatLong" name="pickLatLong"/>
           <button type='button' onClick={()=>{fetchLocation("pickLatLong")}}><img src="location.svg" alt="" /></button>
         </div>
         <div className={`${styles.field}`}>
           <label htmlFor="duration">Drop latitude,longitude:</label>
-          <input type="text" id="dropLatLong" name="dropLatLong" />
+          <input type="text" id="dropLatLong" name="dropLatLong"/>
           <button type='button' onClick={()=>{fetchLocation("dropLatLong")}}><img src="location.svg" alt="" /></button>
         </div>
         <button type='submit' className={`${styles.button}`}>Generate invoice</button>

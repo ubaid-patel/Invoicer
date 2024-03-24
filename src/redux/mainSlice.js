@@ -23,6 +23,12 @@ export const dataSlice = createSlice({
             state.data.pickup = action.payload[0];
             state.data.drop = action.payload[1];
         },
+        updatePickup:(state,action)=>{
+            state.data.pickup = action.payload;
+        },
+        updateDrop:(state,action)=>{
+            state.data.drop = action.payload;
+        },
         save: (state, action) => {
             const fare = calculatefare(action.payload.distance)
             const obj = {
@@ -46,6 +52,6 @@ export const dataSlice = createSlice({
 })
 
 // Action creators are generated for each case reducer function
-export const { update, updateDistance,updateAddress } = dataSlice.actions
+export const { update, updateDistance,updateAddress,updateDrop,updatePickup } = dataSlice.actions
 
 export default dataSlice.reducer

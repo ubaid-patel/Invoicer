@@ -3,7 +3,7 @@ import styles from '../CSS/summary.module.css'; // Import CSS module
 import Map from './Map';
 import { fetchAddress } from './utils';
 import { useSelector, useDispatch } from 'react-redux'
-import { updateAddress } from '../redux/mainSlice';
+import { updateAddress,updateDrop,updatePickup } from '../redux/mainSlice';
 
 export default function Summary() {
     const data = useSelector((state) => state.data.data);
@@ -13,12 +13,24 @@ export default function Summary() {
     function getAddresses(data) {
         let local = { ...data }
         let addresses = []
+
         return (new Promise((resolve, reject) => {
-            fetchAddress([...local.latNlong[0]].reverse()).then((addr0) => {
-                fetchAddress([...local.latNlong[1]].reverse()).then((addr1) => {
-                    dispatch(updateAddress([addr0,addr1]))
-                })
-            });
+
+            if(data.pickup == "" && data.drop ==""){
+                fetchAddress([...local.latNlong[0]].reverse()).then((addr0) => {
+                    fetchAddress([...local.latNlong[1]].reverse()).then((addr1) => {
+                        dispatch(updateAddress([addr0,addr1]))
+                    })
+                });
+            }else if(data.pickup == ""){
+                fetchAddress([...local.latNlong[0]].reverse()).then((addr) => {
+                    dispatch(updatePickup([addr]))
+                });
+            }else if(data.drop == ""){
+                fetchAddress([...local.latNlong[1]].reverse()).then((addr) => {
+                    dispatch(updateDrop([addr]))
+                });
+            }
         }))
     }
     return (
