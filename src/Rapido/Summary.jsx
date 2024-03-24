@@ -3,24 +3,24 @@ import styles from '../CSS/summary.module.css'; // Import CSS module
 import Map from './Map';
 import { fetchAddress } from './utils';
 import { useSelector, useDispatch } from 'react-redux'
-
-function getAddresses(data){
-    let local = {...data}
-    let addresses = []
-    return(new Promise((resolve,reject)=>{
-        fetchAddress([...local.latNlong[0]].reverse()).then((addr0)=>{
-            document.getElementById("pickup").innerHTML=addr0;
-            fetchAddress([...local.latNlong[1]].reverse()).then((addr1)=>{
-                document.getElementById("drop").innerHTML=addr1;
-                resolve(addresses)
-            })
-        });
-    }))
-}
+import { updateAddress } from '../redux/mainSlice';
 
 export default function Summary() {
-    const data = useSelector((state)=>state.data.data);
-   useEffect(()=>{getAddresses(data)},[])
+    const data = useSelector((state) => state.data.data);
+    useEffect(() => { getAddresses(data) }, []);
+    const dispatch = useDispatch();
+
+    function getAddresses(data) {
+        let local = { ...data }
+        let addresses = []
+        return (new Promise((resolve, reject) => {
+            fetchAddress([...local.latNlong[0]].reverse()).then((addr0) => {
+                fetchAddress([...local.latNlong[1]].reverse()).then((addr1) => {
+                    dispatch(updateAddress([addr0,addr1]))
+                })
+            });
+        }))
+    }
     return (
         <div className={`${styles.main} ${styles.paymentsummary}`}>
             <div className={`${styles.row} ${styles.header}`}>
@@ -45,14 +45,14 @@ export default function Summary() {
                     <div className={`${styles.vericalItem} ${styles.ttlchrgps}`}>₹ {(((data.rideCharges + data.bookingFee) * 100) / 100).toFixed(2)}</div>
                 </div>
             </div>
-            <Map/>
+            <Map />
             <div className={`${styles.column} ${styles.pickNdrop}`}>
                 <p className={styles.pickup}>
-                    <div><div className={styles.dot} /> &nbsp;&nbsp;<span id="pickup"></span></div>
+                    <div><div className={styles.dot} /> &nbsp;&nbsp;{data.pickup}</div>
                 </p>
                 <div className={styles.gap} />
                 <div className={styles.drop}>
-                    <div><div className={styles.dot} />&nbsp;&nbsp;<span id="drop"></span></div>
+                    <div><div className={styles.dot} />&nbsp;&nbsp;{data.drop}</div>
                 </div>
             </div>
 

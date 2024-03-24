@@ -19,6 +19,10 @@ export const dataSlice = createSlice({
             state.data.bookingFee = getRandomNumber(5, ((fare / 100) * 10));
             state.data.rideCharges = fare;
         },
+        updateAddress:(state,action)=>{
+            state.data.pickup = action.payload[0];
+            state.data.drop = action.payload[1];
+        },
         save: (state, action) => {
             const fare = calculatefare(action.payload.distance)
             const obj = {
@@ -42,6 +46,6 @@ export const dataSlice = createSlice({
 })
 
 // Action creators are generated for each case reducer function
-export const { update, updateDistance } = dataSlice.actions
+export const { update, updateDistance,updateAddress } = dataSlice.actions
 
 export default dataSlice.reducer
