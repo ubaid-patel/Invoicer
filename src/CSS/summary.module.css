@@ -46,6 +46,11 @@
 }
 .header div:first-child{
    align-self: flex-start;
+   height:max-content;
+}
+.header h3{
+    margin: 0px;
+    margin-top: 5px;
 }
 .billdetails{
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
