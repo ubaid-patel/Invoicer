@@ -2,8 +2,7 @@ import React from "react";
 import styles from '../CSS/serviceTax.module.css'; // Import CSS module
 import { useSelector } from "react-redux";
 
-function generateQRUrl() {
-    const info = JSON.parse(localStorage.rapido);
+function generateQRUrl(info) {
     const data = encodeURIComponent(`Name of the supplier: Roppen Transportation Private Limited,
 GST Number: 29AAHCR1710J1ZC,
 Bank Account details: 10068403940,
@@ -47,7 +46,7 @@ export default function ServiceTax() {
                         </p>
                     </div>
                     <div className={styles.qrcode}>
-                        <img src={generateQRUrl()} alt="" />
+                        <img src={generateQRUrl(data)} alt="" />
                     </div>
                 </div>
                 <div className={styles.custdetails}>
