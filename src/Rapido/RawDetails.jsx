@@ -22,7 +22,7 @@ const convertLatLong = (data) => {
 function RawDetails() {
     const nav = useNavigate();
     const dispatch = useDispatch();
-    const [jsonInput, setJsonInput] = useState({});
+    const [jsonInput, setJsonInput] = useState('');
     
     const handleJsonInputChange = (event) => {
         setJsonInput(event.target.value);
