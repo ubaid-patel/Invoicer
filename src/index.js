@@ -8,6 +8,7 @@ import RapidoInvoice from './Rapido/Invoice';
 import { Route, BrowserRouter, Routes } from 'react-router-dom';
 import { Provider } from 'react-redux'
 import { store } from './redux/store';
+import RawDetails from './Rapido/RawDetails';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -18,6 +19,7 @@ root.render(
         <Route path='/ride_details' Component={RideDetails} />
         <Route path='/order_details' Component={OrderForm} />
         <Route path='/rapido_invoice' Component={RapidoInvoice} />
+        <Route path='/raw_details' Component={RawDetails} />
       </Routes>
     </BrowserRouter>
    </Provider>
