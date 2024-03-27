@@ -16,7 +16,6 @@ function RideDetails() {
     event.preventDefault();
     const data = new FormData(event.target);
     const fare = calculatefare(data.get('distance'));
-
     const obj = {
       name: data.get('name'),
       date: data.get('datetime'),
@@ -61,7 +60,7 @@ function RideDetails() {
         </div>
         <div className={`${styles.field}`}>
           <label htmlFor="distance">Distance:</label>
-          <input type="text" id="distance" name="distance"/>
+          <input type="number" id="distance" name="distance"/>
         </div>
         <div className={`${styles.field}`}>
           <label htmlFor="duration">Duration:</label>

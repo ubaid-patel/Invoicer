@@ -12,10 +12,9 @@ mapboxgl.accessToken = 'pk.eyJ1IjoidWJhaWRwYXRlbDU5NSIsImEiOiJjbHU1ZGFxczYwdmZpM
 
 const Map = () => {
   const data = useSelector((state) => state.data.data);
-  console.log(data)
   const dispatch = useDispatch();
   const latNlong = data.latNlong.length > 1 ? data.latNlong : false;
-  const [distance, setDistance] = useState(null);
+  const [distance, setDistance] = useState(data.distance*1000);
   useEffect(() => {
     (distance !== null) ?
       dispatch(updateDistance(distance)) : console.log(distance)
@@ -91,9 +90,11 @@ const Map = () => {
             'line-width': 5
           }
         });
-
         // Set the distance
-        setDistance(data.routes[0].distance);
+        if(parseInt(distance) === 0 || distance === ""){
+          // alert(distance)
+          setDistance(data.routes[0].distance);
+        }
       }).catch(error => console.error('Error fetching route:', error));
 
     // Clean up
