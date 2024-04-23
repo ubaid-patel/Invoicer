@@ -30,7 +30,10 @@ export const dataSlice = createSlice({
             state.data.drop = action.payload;
         },
         save: (state, action) => {
-            const fare = calculatefare(action.payload.distance)
+            let fare = action.payload.fare;
+            if(fare === 0){
+               fare =  calculatefare(action.payload.distance)
+            }
             const obj = {
                 name: action.payload.name,
                 date: action.payload.datetime,
