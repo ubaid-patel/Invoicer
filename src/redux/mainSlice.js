@@ -14,10 +14,9 @@ export const dataSlice = createSlice({
             state.data = action.payload
         },
         updateDistance: (state, action) => {
-            let fare = action.payload.fare;
-            if(fare === 0){
-               fare =  calculatefare(action.payload/1000)
-            }
+            let fare =state.data.rideCharges;
+            if(fare ===0 || fare === undefined || fare === null)
+             fare = calculatefare(action.payload/1000)
             state.data.distance = action.payload;
             state.data.bookingFee = getRandomNumber(5, ((fare / 100) * 10));
             state.data.rideCharges = fare;
@@ -33,10 +32,7 @@ export const dataSlice = createSlice({
             state.data.drop = action.payload;
         },
         save: (state, action) => {
-            let fare = action.payload.fare;
-            if(fare === 0){
-               fare =  calculatefare(action.payload/1000)
-            }
+            const fare = calculatefare(action.payload.distance)
             const obj = {
                 name: action.payload.name,
                 date: action.payload.datetime,

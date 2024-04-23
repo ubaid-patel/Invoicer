@@ -32,8 +32,9 @@ function RawDetails() {
         try {
             const jsonData = JSON.parse(jsonInput);
             console.log(jsonData.name)
-            const fare = calculatefare(jsonData.distance);
-
+            let fare = jsonData.fare;
+                if(fare === undefined || fare === null || typeof fare === "string")
+                    fare = 0;
             const obj = {
                 name: jsonData.name,
                 date: jsonData.datetime,
